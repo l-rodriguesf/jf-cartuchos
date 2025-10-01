@@ -4,5 +4,5 @@ Objetivo do projeto foi recriar a home de um site real, priorizando por inicio u
 
 Autores
 - Leonardo Rodrigues Ferreira — @l-rodriguesf
-- Lara Yasmim Pereira Rodrigues — @usuarioGitHub
+- Lara Yasmim Pereira Rodrigues — @lara-rodriguess
 - Pedro Henrique Lacerda Frota - @
