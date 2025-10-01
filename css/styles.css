@@ -228,23 +228,66 @@ Produtos
 /* ==============================
 Seção Aluguel
 ============================== */
+.rental {
+  padding: 2rem 0;
+}
+
+.rental .container {
+  background: var(--cor-fundo-caixa);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  transition: var(--transicao);
+}
+
+.rental .container:hover {
+  transform: scale(1.02);
+}
+
+.rental h2 {
+  margin-bottom: 1rem;
+}
+
+.rental p,
+.rental ul {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.rental ul li {
+  margin-bottom: 0.3rem;
+  color: var(--cor-texto-secundario);
+}
+
 .rental img {
-  max-width: 100%;
+  max-width: 120px;
   height: auto;
   display: block;
-  margin: 1rem auto;
+  margin: 1rem 0;
 }
+
 .rental figcaption {
   text-align: center;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: var(--cor-texto-secundario);
 }
-@media (max-width: 768px) {
-  .rental img { max-width: 70%; }
-}
-@media (min-width: 1024px) {
-  .rental img { max-width: 400px; }
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .rental .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .rental img {
+    margin: 0;
+  }
+  .rental ul {
+    margin-left: 1rem;
+  }
 }
 
 /* ==============================
