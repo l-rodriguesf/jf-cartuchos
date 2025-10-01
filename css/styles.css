@@ -17,7 +17,6 @@
   padding: 0;
 }
 
-/* Evita rolagem lateral */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -41,6 +40,13 @@ p { margin-bottom: 1em; }
   width: 100%;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+/* ✅ Reset global para listas */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==============================
@@ -74,11 +80,10 @@ Navegação
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* logo + menu alinhados à esquerda */
-  gap: 1.5rem; /* distância entre logo e menu */
+  justify-content: flex-start;
+  gap: 1.5rem;
 }
 
-/* Mobile: menu em coluna */
 .main-nav ul {
   display: flex;
   flex-direction: column;
@@ -86,7 +91,7 @@ Navegação
   align-items: flex-start;
 }
 
-.nav a {
+.nav a, .main-nav a {
   color: var(--cor-texto);
   font-weight: 500;
   text-decoration: none;
@@ -94,7 +99,7 @@ Navegação
   border-radius: var(--raio-borda);
   transition: var(--transicao);
 }
-.nav a:hover {
+.nav a:hover, .main-nav a:hover {
   background: var(--cor-destaque);
   color: #fff;
   box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
@@ -118,8 +123,31 @@ Botões
 }
 .btn-primary { background: var(--cor-destaque); color: #fff; }
 .btn-primary:hover { background: var(--cor-destaque-escuro); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid #fff; color: #fff; }
-.btn-outline:hover { background: #fff; color: var(--cor-destaque); transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 2px solid var(--cor-destaque); color: var(--cor-destaque); }
+.btn-outline:hover { background: var(--cor-destaque); color: #fff; transform: translateY(-2px); }
+
+/* ==============================
+Seção Quem somos
+============================== */
+.about {
+  background: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  margin: 2rem auto;
+}
+.about h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-destaque);
+}
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--cor-texto-secundario);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
 
 /* ==============================
 Serviços
@@ -130,7 +158,6 @@ Serviços
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
-  overflow-x: hidden;
 }
 .service-card {
   background: var(--cor-fundo-caixa);
@@ -145,18 +172,37 @@ Serviços
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
+/* Menu interno de serviços */
+.services-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.services-nav a {
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--raio-borda);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--cor-destaque);
+  color: var(--cor-destaque);
+  transition: var(--transicao);
+}
+.services-nav a:hover {
+  background: var(--cor-destaque);
+  color: #fff;
+}
+
 /* ==============================
 Produtos
 ============================== */
 .products { padding: 2rem 0; }
 .product-list {
-  list-style: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
-  padding: 0;
-  overflow-x: hidden;
 }
 .product-item {
   background: var(--cor-fundo-caixa);
@@ -165,53 +211,22 @@ Produtos
   box-shadow: var(--sombra-card);
   text-align: center;
   transition: var(--transicao);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product-item:hover { transform: scale(1.03); }
-.product-item img { max-width: 120px; margin-bottom: 1rem; }
+.product-item img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
 .price { font-weight: 700; font-size: 1.2rem; color: var(--cor-destaque); }
 
 /* ==============================
-Promoção
-============================== */
-.promo {
-  background: linear-gradient(90deg, #e0f2fe, #bae6fd);
-  width: 100%;
-  max-width: 800px; /* limite no desktop */
-  margin: 2rem auto;
-  padding: 2rem 1rem;
-  text-align: center;
-  box-shadow: var(--sombra-card);
-  box-sizing: border-box;
-  border-radius: var(--raio-borda);
-}
-.promo p {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ==============================
-Contato
-============================== */
-.contact nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  padding: 0;
-  list-style: none;
-  flex-wrap: wrap;
-}
-.contact nav a {
-  color: var(--cor-destaque);
-  font-weight: 600;
-  transition: var(--transicao);
-}
-.contact nav a:hover { color: var(--cor-destaque-escuro); }
-
-ul, ol { list-style: none; padding: 0; margin: 0; }
-
-/* ==============================
-Seção Aluguel (imagem responsiva)
+Seção Aluguel
 ============================== */
 .rental img {
   max-width: 100%;
@@ -219,15 +234,36 @@ Seção Aluguel (imagem responsiva)
   display: block;
   margin: 1rem auto;
 }
+.rental figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+}
 @media (max-width: 768px) {
-  .rental img {
-    max-width: 70%;
-  }
+  .rental img { max-width: 70%; }
 }
 @media (min-width: 1024px) {
-  .rental img {
-    max-width: 400px; /* limite no desktop */
-  }
+  .rental img { max-width: 400px; }
+}
+
+/* ==============================
+Rodapé
+============================== */
+.site-footer {
+  position: relative;
+  background: var(--cor-destaque);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  overflow: hidden;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 /* ==============================
@@ -235,16 +271,8 @@ Responsividade
 ============================== */
 @media (min-width: 768px) {
   h1 { font-size: 2rem; }
-
-  /* Menu horizontal só no tablet/desktop */
-  .main-nav ul {
-    flex-direction: row;
-    gap: 1.5rem;
-    align-items: center;
-  }
-
+  .main-nav ul { flex-direction: row; gap: 1.5rem; align-items: center; }
   .services-grid, .product-list { grid-template-columns: repeat(2, 1fr); }
-  .contact nav ul { flex-direction: row; justify-content: center; }
   .hero-content { margin-top: 5rem; }
 }
 @media (min-width: 1024px) {
