@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JF Cartuchos e Recargas — Início</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JF Print Solutions</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+<body id="inicio">
 
-  <header class="site-header hero" role="banner">
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header hero">
     <div class="container header-inner">
-      <a href="./index.html" class="logo" aria-label="JF Cartuchos e Recargas — Home">
-        <img src="img/logo.png" alt="Logo JF Cartuchos e Recargas" class="logo-img">
+      <a href="#inicio">
+        <img src="img/logo.png" alt="JF Soluções em Impressão" class="logo-img" />
       </a>
-
-      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
-        <ul class="nav">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#quem-somos">Quem somos nós</a></li>
           <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#produtos">Cartuchos</a></li>
-          <li><a href="#aluguel">Aluguel</a></li>
-          <li><a href="#formatacao">Formatação</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -31,72 +26,82 @@
 
     <div class="hero-content">
       <h1>Recarga rápida. Aluguel flexível. Suporte completo.</h1>
-      <p>Recargamos cartuchos, alugamos impressoras para o seu escritório e formatamos computadores com rapidez e segurança.</p>
-      <p class="hero-cta-row">
-        <a class="btn btn-primary" href="#produtos">Ver cartuchos</a>
-        <a class="btn btn-outline" href="#aluguel">Solicitar orçamento</a>
+      <p>
+        Recargamos cartuchos, alugamos impressoras para o seu escritório
+        e formatamos computadores com rapidez e segurança.
       </p>
+      <a href="#servicos" class="btn btn-primary">Ver serviços</a>
     </div>
   </header>
 
-  <main id="main-content" class="site-main" role="main">
-    <section id="servicos" class="services container" aria-labelledby="servicos-title">
-      <h2 id="servicos-title">Nossos serviços</h2>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3>Recarga de cartuchos</h3>
-          <p>Recarga profissional com garantia de qualidade e testes antes da entrega.</p>
-        </article>
+  <main id="main">
 
-        <article class="service-card">
-          <h3>Aluguel de impressoras</h3>
-          <p>Planos mensais para pequenas e médias empresas, com manutenção inclusa.</p>
-        </article>
-
-        <article class="service-card">
-          <h3>Formatação e manutenção</h3>
-          <p>Formatação, limpeza de sistema e instalação de software com backup opcional.</p>
-        </article>
+    <!-- Seção Quem somos -->
+    <section id="quem-somos" class="about">
+      <div class="container">
+        <h2>Quem somos nós</h2>
+        <p>
+          A <strong>JF Print Solutions</strong> atua no mercado de soluções em impressão oferecendo 
+          recarga de cartuchos, aluguel de impressoras e serviços de formatação. 
+          Com foco em agilidade e suporte técnico de qualidade, ajudamos empresas e 
+          escritórios a reduzirem custos e manterem seus equipamentos sempre em perfeito funcionamento.
+        </p>
       </div>
     </section>
 
-    <section id="produtos" class="products container" aria-labelledby="produtos-title">
-      <h2 id="produtos-title">Cartuchos em destaque</h2>
-      <ul class="product-list">
-        <li class="product-item">
-          <img src="img/cartucho-1.png" alt="Cartucho HP 88 recarregado" />
-          <h3>Cartucho HP 88</h3>
-          <p class="muted">Compatível — Recarga econômica</p>
-          <p class="price">R$ 49,90</p>
-        </li>
-
-        <li class="product-item">
-          <img src="img/toner-samsung.png" alt="Toner Samsung recarregado" />
-          <h3>Toner Samsung</h3>
-          <p class="muted">Alto rendimento — Ideal para escritório</p>
-          <p class="price">R$ 129,00</p>
-        </li>
-
-        <li class="product-item">
-          <img src="img/cartucho-2.webp" alt="Cartucho Canon recarregado" />
-          <h3>Cartucho Canon</h3>
-          <p class="muted">Cor viva — Impressões nítidas</p>
-          <p class="price">R$ 59,50</p>
-        </li>
-      </ul>
+    <!-- Seção Serviços -->
+    <section id="servicos" class="services">
+      <div class="container">
+        <h2>Nossos serviços</h2>
+        <nav class="services-nav">
+          <ul>
+            <li><a href="#cartuchos" class="btn btn-outline">Cartuchos</a></li>
+            <li><a href="#aluguel" class="btn btn-outline">Aluguel</a></li>
+            <li><a href="#formatacao" class="btn btn-outline">Formatação</a></li>
+          </ul>
+        </nav>
+      </div>
     </section>
 
-    <section id="aluguel" class="rental container" aria-labelledby="aluguel-title">
-      <h2 id="aluguel-title">Aluguel de impressoras</h2>
-      <div class="rental-grid">
-        <div>
-          <p>Oferecemos modelos compactos e industriais com planos mensais e assistência técnica.</p>
-          <ul>
-            <li>Suporte técnico 72h</li>
-            <li>Substituição em caso de defeitos</li>
-            <li>Contrato flexível</li>
-          </ul>
-        </div>
+    <!-- Cartuchos em destaque -->
+    <section id="cartuchos" class="products">
+      <div class="container">
+        <h2>Cartuchos em destaque</h2>
+        <ul class="product-list">
+          <li class="product-item">
+            <img src="img/cartucho-1.png" alt="Cartucho HP 88" />
+            <h3>Cartucho HP 88</h3>
+            <p>Compatível — Recarga econômica</p>
+            <p class="price">R$ 49,90</p>
+          </li>
+          <li class="product-item">
+            <img src="img/toner-samsung.png" alt="Toner Samsung" />
+            <h3>Toner Samsung</h3>
+            <p>Alto rendimento — Ideal para escritório</p>
+            <p class="price">R$ 129,00</p>
+          </li>
+          <li class="product-item">
+            <img src="img/cartucho-2.webp" alt="Cartucho Canon" />
+            <h3>Cartucho Canon</h3>
+            <p>Cor viva — Impressões nítidas</p>
+            <p class="price">R$ 59,50</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Aluguel -->
+    <section id="aluguel" class="rental">
+      <div class="container">
+        <h2>Aluguel de impressoras</h2>
+        <p>
+          Oferecemos modelos compactos e industriais com planos mensais e assistência técnica.
+        </p>
+        <ul>
+          <li>Suporte técnico 72h</li>
+          <li>Substituição em caso de defeitos</li>
+          <li>Contrato flexível</li>
+        </ul>
         <figure>
           <img src="img/aluguel.png" alt="Impressora para aluguel em escritório" />
           <figcaption>Modelos disponíveis para aluguel.</figcaption>
@@ -104,48 +109,26 @@
       </div>
     </section>
 
-    <section id="formatacao" class="formatting container" aria-labelledby="formatacao-title">
-      <h2 id="formatacao-title">Formatação e suporte</h2>
-      <p>Instalação do sistema operacional, drivers e antivírus. Serviços rápidos e backup opcional.</p>
-      <div class="formatting-grid">
-        <article>
-          <h3>Formatação completa</h3>
-          <p>Inclui limpeza de software, reinstalação de sistema e atualização de drivers.</p>
-        </article>
-        <article>
-          <h3>Recuperação de arquivos</h3>
-          <p>Recuperamos arquivos perdidos em casos simples, quando possível.</p>
-        </article>
+    <!-- Formatação -->
+    <section id="formatacao" class="services">
+      <div class="container">
+        <h2>Formatação e suporte</h2>
+        <p>
+          Formatação completa, instalação de softwares e backup opcional.
+        </p>
       </div>
     </section>
 
-    <aside class="promo" aria-label="Promoção">
-      <h2>Promoção do mês</h2>
-      <p>Recarga de cartucho preto por <strong>R$ 29,90</strong> — desconto válido até dia 30 deste mês.</p>
-    </aside>
-
-    <section id="contato" class="contact container" aria-labelledby="contato-title">
-      <h2 id="contato-title">Contato</h2>
-      <p>Rua Exemplo, 123 — Centro — (11) 99999-9999 — contato@jfcartuchosec.recargas.com</p>
-      <nav class="contact-links" aria-label="Redes sociais">
-        <ul>
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-          <li><a href="#" aria-label="WhatsApp">WhatsApp</a></li>
-          <li><a href="#" aria-label="Facebook">Facebook</a></li>
-        </ul>
-      </nav>
-    </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <p>&copy; 2025 JF Cartuchos e Recargas. Todos os direitos reservados.</p>
-      <nav aria-label="Informações legais">
-        <ul>
-          <li><a href="#">Termos</a></li>
-          <li><a href="#">Privacidade</a></li>
-        </ul>
-      </nav>
+<!-- Rodapé / Contato -->
+  <footer id="contato" class="site-footer">
+    <div class="container">
+      <h2>Entre em contato</h2>
+      <p>Email: <a href="mailto:contato@jfcartuchos.com">contato@jfcartuchos.com</a></p>
+      <p>Telefone: (61) 3047-1482</p>
+      <p>Endereço: QR 406 Conj. 30 Lote 11 Loja 02 - Samambaia Norte</p>
+      <p>© 2024 JF Print Solutions — Todos os direitos reservados</p>
     </div>
   </footer>
 </body>

@@ -1,0 +1,281 @@
+:root {
+  --cor-fundo: #f4f6fb;
+  --cor-texto: #1f2937;
+  --cor-texto-secundario: #6b7280;
+  --cor-destaque: #2563eb;
+  --cor-destaque-escuro: #1e40af;
+  --cor-borda-sutil: #e5e7eb;
+  --cor-fundo-caixa: #ffffff;
+  --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --raio-borda: 12px;
+  --transicao: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+h1, h2, h3, h4, h5 { font-weight: 700; color: var(--cor-texto); }
+h1 { font-size: 1.6rem; margin-bottom: 0.5em; }
+h2 { font-size: 1.4rem; margin: 1em 0 0.5em; }
+h3 { font-size: 1.1rem; margin-bottom: 0.5em; }
+p { margin-bottom: 1em; }
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* ✅ Reset global para listas */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+Header + Hero
+============================== */
+.site-header.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("../img/capa.png") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+  border-radius: 0 0 var(--raio-borda) var(--raio-borda);
+  min-height: 80vh;
+}
+.site-header.hero h1,
+.site-header.hero p {
+  color: #fff;
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+.hero-content { margin-top: 3rem; }
+
+.logo-img { width: 90px; height: auto; display: block; }
+@media (min-width: 768px) {
+  .logo-img { width: 120px; }
+}
+
+/* ==============================
+Navegação
+============================== */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.nav a, .main-nav a {
+  color: var(--cor-texto);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--raio-borda);
+  transition: var(--transicao);
+}
+.nav a:hover, .main-nav a:hover {
+  background: var(--cor-destaque);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+a:focus, button:focus, .btn:focus {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+/* ==============================
+Botões
+============================== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--raio-borda);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transicao);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.btn-primary { background: var(--cor-destaque); color: #fff; }
+.btn-primary:hover { background: var(--cor-destaque-escuro); transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 2px solid var(--cor-destaque); color: var(--cor-destaque); }
+.btn-outline:hover { background: var(--cor-destaque); color: #fff; transform: translateY(-2px); }
+
+/* ==============================
+Seção Quem somos
+============================== */
+.about {
+  background: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  margin: 2rem auto;
+}
+.about h2 {
+  margin-bottom: 1rem;
+  color: var(--cor-destaque);
+}
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--cor-texto-secundario);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ==============================
+Serviços
+============================== */
+.services { padding: 2rem 0; text-align: center; }
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.service-card {
+  background: var(--cor-fundo-caixa);
+  padding: 2rem;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  text-align: left;
+  transition: var(--transicao);
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* Menu interno de serviços */
+.services-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.services-nav a {
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--raio-borda);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--cor-destaque);
+  color: var(--cor-destaque);
+  transition: var(--transicao);
+}
+.services-nav a:hover {
+  background: var(--cor-destaque);
+  color: #fff;
+}
+
+/* ==============================
+Produtos
+============================== */
+.products { padding: 2rem 0; }
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.product-item {
+  background: var(--cor-fundo-caixa);
+  padding: 1.5rem;
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+  text-align: center;
+  transition: var(--transicao);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product-item:hover { transform: scale(1.03); }
+.product-item img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+.price { font-weight: 700; font-size: 1.2rem; color: var(--cor-destaque); }
+
+/* ==============================
+Seção Aluguel
+============================== */
+.rental img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+.rental figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+}
+@media (max-width: 768px) {
+  .rental img { max-width: 70%; }
+}
+@media (min-width: 1024px) {
+  .rental img { max-width: 400px; }
+}
+
+/* ==============================
+Rodapé
+============================== */
+.site-footer {
+  position: relative;
+  background: var(--cor-destaque);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  overflow: hidden;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.site-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+Responsividade
+============================== */
+@media (min-width: 768px) {
+  h1 { font-size: 2rem; }
+  .main-nav ul { flex-direction: row; gap: 1.5rem; align-items: center; }
+  .services-grid, .product-list { grid-template-columns: repeat(2, 1fr); }
+  .hero-content { margin-top: 5rem; }
+}
+@media (min-width: 1024px) {
+  h1 { font-size: 2.4rem; }
+  .services-grid, .product-list { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
